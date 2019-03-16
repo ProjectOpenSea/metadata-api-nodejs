@@ -15,7 +15,7 @@ const app = express()
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', function(req, res) {
-  res.render('pages/index');
+  res.send('Get ready for OpenSea!');
 })
 
 app.get('/api/birthstamp/:token_id', function(req, res) {
