@@ -14,10 +14,10 @@ You need node.js (8.11.* or later) and npm installed. If you want to do a Heroku
 3. Run `npm install`.
 4. Save the Heroku URL you picked into `src/constants.js` as the `HOST` variable (e.g. `https://your-metadata-api.herokuapp.com`). This is the root URL for the tokens on your contract.
 5. Deploy to Heroku by committing your changes and using `git push heroku master`.
-6. Call [_setTokenURI](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/1fd993bc01890bf6bd974aaf3d709bdf0a79b9bf/contracts/token/ERC721/ERC721Metadata.sol#L68) on your NFT's contract, either directly if you exposed that method for the contract `owner`, or by minting new tokens using [mintWithTokenURI](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/token/ERC721/ERC721MetadataMintable.sol#L19).
-7. Visit your token's metadata at https://your-metadata-api.herokuapp.com/api/token/1 (for token 1).
+6. Visit your token's metadata at https://your-metadata-api.herokuapp.com/api/token/1 (for token 1).
+7. Call [_setTokenURI](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/1fd993bc01890bf6bd974aaf3d709bdf0a79b9bf/contracts/token/ERC721/ERC721Metadata.sol#L68) on your NFT's contract using the URL pattern above, either directly if you exposed that method for the contract `owner`, or by minting new tokens using [mintWithTokenURI](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/token/ERC721/ERC721MetadataMintable.sol#L19).
 
-If you're confused by the contract call above, here's a [tutorial on setting up a mintable NFT contract](https://docs.opensea.io/docs). Alternatively, you can have your buyers mint the tokens for you (and pay the gas to do that) at purchase-time, using the [OpenSea crowdsale tutorial](https://docs.opensea.io/docs/opensea-initial-item-sale-tutorial).
+If you're confused by the last step, here's a [tutorial on setting up a mintable NFT contract](https://docs.opensea.io/docs). Alternatively, you can have your buyers mint the tokens for you (and pay the gas to do that) at purchase-time, using the [OpenSea crowdsale tutorial](https://docs.opensea.io/docs/opensea-initial-item-sale-tutorial).
 
 ## Troubleshooting
 
