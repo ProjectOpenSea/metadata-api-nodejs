@@ -18,7 +18,7 @@ app.get('/', function(req, res) {
   res.send('Get ready for OpenSea!');
 })
 
-app.get('/api/birthstamp/:token_id', function(req, res) {
+app.get('/api/token/:token_id', function(req, res) {
   const tokenId = parseInt(req.params.token_id).toString()
   const person = db[tokenId]
   const bdayParts = person.birthday.split(' ')
