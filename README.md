@@ -4,17 +4,20 @@ Use this repo to make an API for serving metadata about your tokens ([ERC-721](h
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
+## Requirements
+You need node.js (8.11.* or later) and npm installed. If you want to do a Heroku deployment, download and install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) and run `heroku login` locally.
 
 ## Instructions
 
 1. Click the **Deploy to Heroku** button above to instantly get it up and running somewhere. You can pick the URL! For this example, let's say that it's `your-metadata-api.herokuapp.com`.
-2. Download and install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) and run `heroku login` locally.
-3. Run `heroku git:clone -a your-metadata-api`, and `cd` into your new directory.
-4. Run `npm install`.
-5. Save the Heroku URL you picked into `src/constants.js` as the `HOST` variable (e.g. `https://your-metadata-api.herokuapp.com`). This is the root URL for the tokens on your contract.
+2. Run `heroku git:clone -a your-metadata-api`, and `cd` into your new directory.
+3. Run `npm install`.
+4. Save the Heroku URL you picked into `src/constants.js` as the `HOST` variable (e.g. `https://your-metadata-api.herokuapp.com`). This is the root URL for the tokens on your contract.
+5. Deploy to Heroku by committing your changes and using `git push heroku master`.
 6. Call [_setTokenURI](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/1fd993bc01890bf6bd974aaf3d709bdf0a79b9bf/contracts/token/ERC721/ERC721Metadata.sol#L68) on your NFT's contract, either directly if you exposed that method for the contract `owner`, or by minting new tokens using [mintWithTokenURI](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/token/ERC721/ERC721MetadataMintable.sol#L19).
+7. Visit your token's metadata at https://your-metadata-api.herokuapp.com/api/token/1 (for token 1).
 
-If you're confused by #5 above, here's a [tutorial on setting up a mintable NFT contract](https://docs.opensea.io/docs). Alternatively, you can have your buyers mint the tokens for you (and pay the gas to do that) at purchase-time, using the [OpenSea crowdsale tutorial](https://docs.opensea.io/docs/opensea-initial-item-sale-tutorial).
+If you're confused by the contract call above, here's a [tutorial on setting up a mintable NFT contract](https://docs.opensea.io/docs). Alternatively, you can have your buyers mint the tokens for you (and pay the gas to do that) at purchase-time, using the [OpenSea crowdsale tutorial](https://docs.opensea.io/docs/opensea-initial-item-sale-tutorial).
 
 ## Troubleshooting
 
