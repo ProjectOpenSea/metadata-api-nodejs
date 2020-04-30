@@ -4,8 +4,6 @@ Use this repo to make an API for serving metadata about your tokens ([ERC-721](h
 
 Metadata for each token can include an image, animation, attributes, scalar properties, boost properties, and more!
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
 - [Getting Started](#getting-started)
   - [Requirements](#requirements)
 - [Minting Tokens](#minting-tokens)
@@ -18,13 +16,14 @@ Metadata for each token can include an image, animation, attributes, scalar prop
 ### Requirements
 You need node.js (8.11.* or later) and npm installed. If you want to do a Heroku deployment, download and install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) and run `heroku login` locally.
 
-1. Click the **Deploy to Heroku** button above to instantly get it up and running somewhere. You can pick the URL! For this example, let's say that it's `your-metadata-api.herokuapp.com`.
-2. Run `heroku git:clone -a your-metadata-api`, and `cd` into your new directory.
+1. Clone the repo `git clone https://github.com/ProjectOpenSea/metadata-api-nodejs`
+2. Change directories `cd metadata-api-nodejs`
 3. Run `npm install`.
-4. Save the Heroku URL you picked into `src/constants.js` as the `HOST` variable (e.g. `https://your-metadata-api.herokuapp.com`). This is the root URL for the tokens on your contract.
-5. Deploy to Heroku by committing your changes and using `git push heroku master`.
-6. Visit your token's metadata at https://your-metadata-api.herokuapp.com/api/token/1 (for token 1).
-
+4. Run `heroku create your-metadata-api`. If the name `your-metadata-api` was already taken you'd get the error ` ▸    Name your-metadata-api is already taken`. Try different names until one works. This also adds heroku to your `git remote` so you can push to it.
+5. Use your favorite code editor to save the Heroku URL you picked into `src/constants.js` as the `HOST` variable (e.g. `https://your-metadata-api.herokuapp.com`). This is the root URL for the tokens on your contract.
+6. Run `git add src/constants.js` and `git commit`
+7. Run `git push heroku master`
+8. Check your api endpoint by going to `your-metadata-api.herokuapp.com/api/token/1`
 ## Minting Tokens
 
 Here's a [tutorial on setting up a mintable NFT contract](https://docs.opensea.io/docs). Alternatively, you can have your buyers mint the tokens for you (and pay the gas to do that) at purchase-time, using the [OpenSea Crowdsale Tutorial](https://docs.opensea.io/docs/opensea-initial-item-sale-tutorial).
