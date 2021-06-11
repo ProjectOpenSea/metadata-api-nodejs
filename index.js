@@ -18,6 +18,17 @@ app.get('/', function(req, res) {
   res.send('Get ready for OpenSea!');
 })
 
+app.get('api/contract', function(req, res) {  
+  const data = {
+    'name': 'NFT Example',
+    'description': 'NFTs description example.',
+    'image': `${HOST}/images/logo.png`,
+    'external_link': 'https://opensea.io/'
+  }
+    res.send(data)
+  })
+
+
 app.get('/api/token/:token_id', function(req, res) {
   const tokenId = parseInt(req.params.token_id).toString()
   const person = db[tokenId]
