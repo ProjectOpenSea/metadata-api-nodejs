@@ -24,6 +24,7 @@ You need node.js (8.11.* or later) and npm installed. If you want to do a Heroku
 4. Save the Heroku URL you picked into `src/constants.js` as the `HOST` variable (e.g. `https://your-metadata-api.herokuapp.com`). This is the root URL for the tokens on your contract.
 5. Deploy to Heroku by committing your changes and using `git push heroku master`.
 6. Visit your token's metadata at https://your-metadata-api.herokuapp.com/api/token/1 (for token 1).
+7. Visit your token's contract-level metadata at https://your-metadata-api.herokuapp.com/api/contract.
 
 ## Minting Tokens
 
