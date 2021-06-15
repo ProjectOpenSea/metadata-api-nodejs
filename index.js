@@ -20,18 +20,23 @@ app.get('/', function(req, res) {
 
 app.get('/api/token/:token_id', function(req, res) {
   const tokenId = parseInt(req.params.token_id).toString()
-  const person = db[tokenId]
-  const bdayParts = person.birthday.split(' ')
-  const day = parseInt(bdayParts[1])
-  const month = parseInt(bdayParts[0])
+  // const person = db[tokenId]
+  // const bdayParts = person.birthday.split(' ')
+  // const day = parseInt(bdayParts[1])
+  // const month = parseInt(bdayParts[0])
+  const nft = db[tokenID]
   const data = {
+    /*
     'name': person.name,
     'attributes': {
       'birthday': person.birthday,
       'birth month': monthName(month),
       'zodiac sign': zodiac(day, month),
-      // 'age': moment().diff(person.birthday, 'years')
+      'age': moment().diff(person.birthday, 'years')
     },
+    */
+    'name': nft.name,
+    'description': nft.description
     'image': `${HOST}/images/${tokenId}.png`
   }
   res.send(data)
@@ -42,14 +47,18 @@ app.listen(app.get('port'), function() {
 })
 
 // returns the zodiac sign according to day and month ( https://coursesweb.net/javascript/zodiac-signs_cs )
+/*
 function zodiac(day, month) {
   var zodiac =['', 'Capricorn', 'Aquarius', 'Pisces', 'Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn'];
   var last_day =['', 19, 18, 20, 20, 21, 21, 22, 22, 21, 22, 21, 20, 19];
   return (day > last_day[month]) ? zodiac[month*1 + 1] : zodiac[month];
 }
+*/
 
+/*
 function monthName(month) {
   const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
   ]
   return monthNames[month - 1]
 }
+*/
