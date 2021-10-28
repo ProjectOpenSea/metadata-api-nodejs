@@ -1,4 +1,4 @@
-const HOST = 'https://birthstamps.herokuapp.com'
+const HOST = 'https://nft-api.kawaiibunnies.com'
 
 module.exports = {
   HOST
