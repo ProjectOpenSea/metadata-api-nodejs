@@ -1,22 +1,20 @@
 module.exports = {
-  "1": {
-    "name": "Chunky Monkey",
-    "birthday": "10-18"
+  1: {
+    name: "Buzz",
+    description: "Buzzzzzz",
+    image: "https://nfts-metadata.herokuapp.com/images/buzz.png",
+    attributes: [
+      { trait_type: "Rarity", value: "Gold" },
+      { trait_type: "Collection", value: "Presale" },
+    ],
   },
-  "2": {
-    "name": "Flerp Derp",
-    "birthday": "01-08"
+  2: {
+    name: "Kix",
+    description: "Kixxx",
+    image: "https://nfts-metadata.herokuapp.com/images/kix.png",
+    attributes: [
+      { trait_type: "Rarity", value: "Legendary" },
+      { trait_type: "Collection", value: "Presale" },
+    ],
   },
-  "3": {
-    "name": "Buttle McFuddle",
-    "birthday": "01-22"
-  },
-  "4": {
-    "name": "Quiero Pancakes",
-    "birthday": "03-04"
-  },
-  "5": {
-    "name": "Guino the Penguin",
-    "birthday": "03-09"
-  }
-}
+};
