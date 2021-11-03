@@ -1,6 +1,6 @@
 module.exports = {
   1: {
-    name: "DoesTheChangeWork",
+    name: "Buzz",
     description: "Buzzzzzz",
     image: "https://nfts-metadata.herokuapp.com/images/buzz.png",
     attributes: [
