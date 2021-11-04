@@ -2,7 +2,8 @@ const express = require("express");
 const path = require("path");
 const moment = require("moment");
 const { HOST } = require("./src/constants");
-const db = require("./src/database");
+const nftsDb = require("./src/NFTsDatabase");
+const tokensDb = require("./src/tokensDatabase");
 
 const PORT = process.env.PORT || 5000;
 
@@ -20,7 +21,11 @@ app.get("/", function (req, res) {
 
 app.get("/api/token/:token_id", function (req, res) {
   const tokenId = parseInt(req.params.token_id).toString();
-  const data = db[tokenId];
+  const tokenData = tokensDb[tokenId];
+  const nftData = nftsDb[tokenData.nft_template];
+  const data = { ...nftData, ...tokenData };
+  delete data.nft_template;
+
   res.send(data);
 });
 

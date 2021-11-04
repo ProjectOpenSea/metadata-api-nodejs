@@ -1,5 +1,5 @@
 module.exports = {
-  1: {
+  buzz: {
     name: "Buzz",
     description: "Buzzzzzz",
     image: "https://nfts-metadata.herokuapp.com/images/buzz.svg",
@@ -8,7 +8,7 @@ module.exports = {
       { trait_type: "Collection", value: "Presale" },
     ],
   },
-  2: {
+  kix: {
     name: "Kix",
     description: "Kixxx",
     image: "https://nfts-metadata.herokuapp.com/images/kix.svg",
